@@ -2,6 +2,7 @@ from bs4 import BeautifulSoup
 import requests
 
 visited_sites = []  # Link of visited sites during the recursive query.
+output_file = open("calendar_urls.txt", 'w')
 
 """
     get_hrefs():
@@ -85,20 +86,19 @@ def get_google_calendar(url):
 
         [Parameters]:
             url: The starting URL to begin with.
-            output_filename: The output file where the program dumps the link into.
+            output_file: The output file where the program dumps the link into.
 """
-def recursive_get(url, output_filename):
-    # Open the file and clear the current content.
-    calendar_file = open(output_filename, 'w')
-    calendar_file.write('')
-
+def recursive_get(url):
     # Get the data we need
     title, calendar_url = get_google_calendar(url)
     if title:
-        calendar_file.write(title + ' ' + calendar_url + '\n')
+        output_file.write(title + ' ' + calendar_url + '\n')
     else:
         for each_link in get_links(url, "https://usth.edu.vn"):
-            recursive_get(each_link, output_filename)
+            recursive_get(each_link)
 
+def main():
+    recursive_get('https://usth.edu.vn/en/timetable/')
 
-recursive_get('https://usth.edu.vn/en/timetable/', 'calendar_urls.txt')
+if __name__ == '__main__':
+    main()
