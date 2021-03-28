@@ -51,8 +51,12 @@ You could set them to any value if you want. Seriously! Just don't tell me why t
 ### What the hell am I seeing here in this f**king CSV file?
 Well, the data you collect is in the following format:
 ```
-| Name of the subject   |                       |                       |                       |                       |                       |
+| Name of the class     |                       |                       |                       |                       |                       |
 |                       | Start Time 1          | End Time 1            | I forgot 1            | Location 1            | Description 1         |
 |                       | Start Time 2          | End Time 2            | I forgot 2            | Location 2            | Description 2         |
 |                       | Start Time 3          | End Time 3            | I forgot 3            | Location 3            | Description 3         |
+
 ```
+
+### Warning
+This code is not for anyone who easily forgets what the hell their friend classes are!
