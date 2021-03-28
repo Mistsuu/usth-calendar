@@ -1,4 +1,5 @@
-### USTH Calendar Scraping
+# USTH Calendar Scraping
+===========================================================================================================
 Tired of searching through multiple USTH calendars to find what is your best friend studying in his class? Don't worry! With the ultimate **USTH Calendar Scraping**, you, don't have to worry about clicking through boring stuffs.
 
 ### What you need first
