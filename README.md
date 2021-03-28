@@ -33,17 +33,17 @@ pip
 *Linux*
 
 ```
-python get_link_calendar.py && python extract_from_calendar.py 30 > result/output.csv 
+python get_link_calendar.py && python extract_from_calendar.py 30 > output.csv 
 ```
 
 where 30 is the number of future events you want to get in the calendar. You could set it to any value if you want. Seriously! Just don't tell me why the hell is the code taking so slow or why your computer is trying to cry out loud...
 
-<ins>*Note:*</ins> *Basically, this code snippet will produce an output file in CSV format.*
+<ins>*Note:*</ins> *Basically, this code snippet will produce an output file in CSV format, at output.csv.*
 
 ### What the hell am I seeing here in this f**king CSV file?
 Well, the data you collect is in the following format:
 ```
-| Name of the subject   |                       |                       |                       |                       |                       |                       |
+| Name of the subject   |                       |                       |                       |                       |                       |
 |                       | Start Time 1          | End Time 1            | I forgot 1            | Location 1            | Description 1         |
 |                       | Start Time 2          | End Time 2            | I forgot 2            | Location 2            | Description 2         |
 |                       | Start Time 3          | End Time 3            | I forgot 3            | Location 3            | Description 3         |
