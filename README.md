@@ -4,7 +4,7 @@ Tired of searching through multiple USTH calendars to find what is your best fri
 ### What you need first
 In order to use this, you need a *credentials.json* file and **Python3.x**. To obtain *credentials.json*, you could go to this page: <ins>https://developers.google.com/people/quickstart/python</ins>.
 
-![alt text](img/quick-start-python-page.jpg "Title")
+![alt text](img/quick-start-python-page.png "Title")
 
 And just do step one to get the *credentials.json* file. Be sure to put that file in the same directory of our Python codes =).
 
