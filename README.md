@@ -12,19 +12,19 @@ And just do step one to get the *credentials.json* file. Be sure to put that fil
 
 You think it is done? Not so fast! Install these Python libraries first by running:
 ```
-    pip install --upgrade google-api-python-client google-auth-httplib2 google-auth-oauthlib
+pip install --upgrade bs4 google-api-python-client google-auth-httplib2 google-auth-oauthlib
 ```
 
 If it does not work, please try 
 
 ```
-    python -m pip
+python -m pip
 ```
 
 instead of 
 
 ```
-    pip
+pip
 ```
 
 ### Usage
@@ -33,7 +33,7 @@ instead of
 *Linux*
 
 ```
-    python get_link_calendar.py && python extract_from_calendar.py 30 > {output-filename-you-can-choose}.csv 
+python get_link_calendar.py && python extract_from_calendar.py 30 > result/output.csv 
 ```
 
 where 30 is the number of future events you want to get in the calendar. You could set it to any value if you want. Seriously! Just don't tell me why the hell is the code taking so slow or why your computer is trying to cry out loud...

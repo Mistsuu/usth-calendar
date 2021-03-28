@@ -98,7 +98,7 @@ def recursive_get(url, output_filename):
         calendar_file.write(title + ' ' + calendar_url + '\n')
     else:
         for each_link in get_links(url, "https://usth.edu.vn"):
-            recursive_get(each_link)
+            recursive_get(each_link, output_filename)
 
 
 recursive_get('https://usth.edu.vn/en/timetable/', 'calendar_urls.txt')
