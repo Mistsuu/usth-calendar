@@ -30,15 +30,23 @@ pip
 ### Usage
 **Wanna get it fast?** Here is how you do it!
 
-*Linux*
+*Linux, and anywhere else?*
 
 ```
 python get_link_calendar.py && python extract_from_calendar.py 30 > output.csv 
 ```
 
-where 30 is the number of future events you want to get in the calendar. You could set it to any value if you want. Seriously! Just don't tell me why the hell is the code taking so slow or why your computer is trying to cry out loud...
-
 <ins>*Note:*</ins> *Basically, this code snippet will produce an output file in CSV format, at output.csv.*
+
+*Actual syntax*
+```
+python get_link_calendar.py && python extract_from_calendar.py {nUpcoming} > {output-filename}.csv
+```
+
+where *nUpcoming* is the number from 0-infinity of future events you want to get in the calendar. </br> 
+and *output-filename* is the output file you desire.
+
+You could set them to any value if you want. Seriously! Just don't tell me why the hell is the code taking so slow or why your computer is trying to cry out loud...
 
 ### What the hell am I seeing here in this f**king CSV file?
 Well, the data you collect is in the following format:
