@@ -28,9 +28,10 @@ instead of
 ```
 
 ### Usage
-**Wanna get it fast?** Here is how you do it!
-
+**Wanna get it fast?** Here is how you do it! 
+This code snippet will produce an output to whatever filename you choose in CSV format.
 *Linux*
+
 ```
     python get_link_calendar.py && python extract_from_calendar.py > {outputfilename}.csv 
 ```
