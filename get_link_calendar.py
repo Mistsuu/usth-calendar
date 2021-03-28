@@ -1,10 +1,17 @@
 from bs4 import BeautifulSoup
 import requests
 
-visited_sites = []
-calendar_file = open('calendar_urls.txt', 'w')
-calendar_file.write('')
+visited_sites = []  # Link of visited sites during the recursive query.
 
+"""
+    get_hrefs():
+        Returns all href links found in a page.
+        
+        [Parameters]:
+            url:        The URL of the page we are searching for hrefs.
+            server_url: The base URL so that we are not finding links 
+                        that does not belongs to the current website.
+"""
 def get_links(url, server_url):
     response = requests.get(url)
     data     = response.text
@@ -43,7 +50,16 @@ def get_links(url, server_url):
     return links
 
 
-def get_google_calendar_url(url):
+"""
+    get_google_calendar():
+        Get Google Calendar's URL and title embeded in the HTML file
+        of an URL.
+
+        [Parameters]:
+            url: The URL that points to a page that may or may not
+                 contains a Google Calendar.
+"""
+def get_google_calendar(url):
     response = requests.get(url)
     data     = response.text
     soup     = BeautifulSoup(data, 'lxml')
@@ -62,10 +78,22 @@ def get_google_calendar_url(url):
 
     return None, None
 
+"""
+    recursive_get():
+        Recursively finds and appends URLs that contains Google Calendar
+        to an array starting from an URL. The result is written to a file.
 
-def recursive_get(url):
-    #print("[] From {} spawns:".format(url))
-    title, calendar_url = get_google_calendar_url(url)
+        [Parameters]:
+            url: The starting URL to begin with.
+            output_filename: The output file where the program dumps the link into.
+"""
+def recursive_get(url, output_filename):
+    # Open the file and clear the current content.
+    calendar_file = open(output_filename, 'w')
+    calendar_file.write('')
+
+    # Get the data we need
+    title, calendar_url = get_google_calendar(url)
     if title:
         calendar_file.write(title + ' ' + calendar_url + '\n')
     else:
@@ -73,4 +101,4 @@ def recursive_get(url):
             recursive_get(each_link)
 
 
-links = recursive_get('https://usth.edu.vn/en/timetable/')
+recursive_get('https://usth.edu.vn/en/timetable/', 'calendar_urls.txt')
